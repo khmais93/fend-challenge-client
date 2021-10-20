@@ -6,7 +6,7 @@ import Results from "./Results";
 import SearchBar from "./SearchBar";
 
 function Home() {
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
   const [exactPatents, setExactPatents] = useState({
     patents: [],
     chemicalName: "",
