@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Container } from "react-bootstrap";
 import classes from "./Home.module.css";
 import PatentsNumber from "./PatentsNumber";
@@ -9,14 +9,11 @@ function Home() {
   const [searchResults, setSearchResults] = useState([]);
   const [exactPatents, setExactPatents] = useState({
     patents: [],
-    status: false,
     chemicalName: "",
   });
+
   const onSearch = useCallback(
-    (
-      results,
-      exactMatchResults = { patents: [], status: false, chemicalName: "" }
-    ) => {
+    (results, exactMatchResults = { patents: [], chemicalName: "" }) => {
       setSearchResults(results);
       setExactPatents(exactMatchResults);
     },

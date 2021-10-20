@@ -7,23 +7,20 @@ function NavBar(props) {
   const { loginHandler, loggedIn } = props;
 
   const onLoginSuccess = (res) => {
-    console.log("Login Success: currentUser:", res.profileObj.name);
     loginHandler(true);
     refreshTokenSetup(res);
   };
 
   const onLoginFailure = (res) => {
-    console.log("Login failed: res:", res);
     loginHandler(false);
   };
   const onLogoutSuccess = () => {
-    console.log("Logout made successfully");
     loginHandler(false);
   };
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>Knowledge Pioneer</Navbar.Brand>
+        <Navbar.Brand>FEND CHALLENGE</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           className="justify-content-end"

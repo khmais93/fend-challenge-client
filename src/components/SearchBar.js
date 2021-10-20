@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Row, Col, FloatingLabel, Form } from "react-bootstrap";
 import axios from "axios";
 
@@ -25,7 +25,6 @@ function SearchBar(props) {
         );
         onSearch(results.data.data.patents, {
           patents: exactMatch.data.data.patents,
-          status: true,
           chemicalName: searchValue,
         });
       }
@@ -47,10 +46,10 @@ function SearchBar(props) {
   return (
     <Row className="g-2">
       <Col md>
-        <FloatingLabel controlId="floatingInputGrid" label="Patent Search">
+        <FloatingLabel controlId="floatingInputGrid" label="Patents Search">
           <Form.Control
             type="text"
-            placeholder="Patent Search"
+            placeholder="Patents Search"
             onChange={searchValueHandler}
             value={searchValue}
           />
