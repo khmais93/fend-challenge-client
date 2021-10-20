@@ -20,7 +20,14 @@ function SearchBar(props) {
         const results = await axios.get(
           `http://localhost:8000/api/v1/patents?chemical_type_1[regex]=${searchValue.toUpperCase()}`
         );
-        onSearch(results.data.data.patents);
+        const exactMatch = await axios.get(
+          `http://localhost:8000/api/v1/patents?chemical_type_1=${searchValue.toUpperCase()}`
+        );
+        onSearch(results.data.data.patents, {
+          patents: exactMatch.data.data.patents,
+          status: true,
+          chemicalName: searchValue,
+        });
       }
       if (field === "patentTitle") {
         const results = await axios.get(
