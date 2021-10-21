@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(null);
   return (
     <>
       <NavBar loginHandler={setLoggedIn} />
