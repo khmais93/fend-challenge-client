@@ -21,17 +21,19 @@ function GoogleAuth(props) {
     });
   }, []);
 
+  useEffect(() => {
+    loginHandler(isSignedIn);
+  }, [isSignedIn, loginHandler]);
+
   const onAuthChange = () => {
     setIsSignedIn(auth.current.isSignedIn.get());
   };
   const onSignIn = () => {
     auth.current.signIn();
-    loginHandler(isSignedIn);
   };
 
   const onSignOut = () => {
     auth.current.signOut();
-    loginHandler(isSignedIn);
   };
 
   const renderAuthButton = () => {
