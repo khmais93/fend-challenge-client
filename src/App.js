@@ -8,8 +8,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <>
-      <NavBar loggedIn={loggedIn} loginHandler={setLoggedIn} />
-      {loggedIn ? <Home /> : <LoginMessage />}
+      <NavBar loginHandler={setLoggedIn} />
+      {!loggedIn ? <Home /> : <LoginMessage />}
     </>
   );
 }

@@ -1,22 +1,10 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { GoogleLogout, GoogleLogin } from "react-google-login";
-import { refreshTokenSetup } from "../utils/refreshToken";
+import GoogleAuth from "./GoogleAuth";
 
 function NavBar(props) {
-  const { loginHandler, loggedIn } = props;
+  const { loginHandler } = props;
 
-  const onLoginSuccess = (res) => {
-    loginHandler(true);
-    refreshTokenSetup(res);
-  };
-
-  const onLoginFailure = (res) => {
-    loginHandler(false);
-  };
-  const onLogoutSuccess = () => {
-    loginHandler(false);
-  };
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -28,22 +16,7 @@ function NavBar(props) {
         >
           <Nav>
             <Nav.Link>
-              {!loggedIn ? (
-                <GoogleLogin
-                  clientId="422495471088-4i1rh4ae2a9dkcnrrfe0b5ustq3nj4ni.apps.googleusercontent.com"
-                  buttonText="Login"
-                  onSuccess={onLoginSuccess}
-                  onFailure={onLoginFailure}
-                  cookiePolicy={"single_host_origin"}
-                  isSignedIn={true}
-                />
-              ) : (
-                <GoogleLogout
-                  clientId="422495471088-4i1rh4ae2a9dkcnrrfe0b5ustq3nj4ni.apps.googleusercontent.com"
-                  buttonText="Logout"
-                  onLogoutSuccess={onLogoutSuccess}
-                ></GoogleLogout>
-              )}
+              <GoogleAuth loginHandler={loginHandler} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
