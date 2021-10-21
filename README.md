@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# FrontEnd Challenge, client side
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app render patents results based on instanteneous searched words. Words can be a part of a patent title or a chemical type used on the patent claim. User can choose between two by selecting the search type he wants to use.
 
-## Available Scripts
+For both search types, a table of results will be shown, it includes patents title and their number. Patent No if clicked will take the user to the Google patent website.
+If you search using chemical type mode, then a part will show up showing how many patents are using this chemical type.
 
-In the project directory, you can run:
+To be able to use this search app, user must login first using his Google account.
 
-### `yarn start`
+Results received in this app are the result of an the consumption of an API that was build mainly for this app using ExpressJs. This Backend app is deployed on [Heroku](https://fend-challenge.herokuapp.com/api/v1/patents).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Packages used: axios, react-bootstrap.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+Clone the repository, change directories, and use YARN to install the dependencies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ gh repo clone khmais93/fend-challenge-client
+$ cd fend-challenge-client
+$ yarn install
+```
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project can be run with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project can be viewed in the browser at
 
-### `yarn eject`
+- [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Screenshots
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Home Page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+!['Home page'](./docs/images/homePage.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Search by title
 
-## Learn More
+!['Patent title'](./docs/images/patentTitle.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Search by chemical type
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+!['Chemcial type'](./docs/images/chemicalType.png)
