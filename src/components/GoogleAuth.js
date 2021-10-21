@@ -12,6 +12,7 @@ function GoogleAuth(props) {
           clientId:
             "422495471088-4i1rh4ae2a9dkcnrrfe0b5ustq3nj4ni.apps.googleusercontent.com",
           scope: "email",
+          ux_mode: "redirect",
         })
         .then(() => {
           auth.current = window.gapi.auth2.getAuthInstance();
