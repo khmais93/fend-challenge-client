@@ -20,12 +20,13 @@ function PatentsNumber(props) {
         <div>
           {mergedResults.length} patents contianing the chemical substance "
           <strong>{results.chemicalName}</strong>" were found.
-          <br /> Table below show results of patents that their chemical part
-          contains just the word "{results.chemicalName}".
+          <br />
+          NB: Table below show results of patents that their chemical part
+          contains the word "{results.chemicalName}".
           <br /> Example, if you search for "Carbon", 0 patents containing
           Carbon will be found, but table results below will show 2 patents
           because one of them, its chemical part contains "CALCIUM{" "}
-          <strong>CARBON</strong>ATE"
+          <strong>CARBON</strong>ATE", same story for others.
         </div>
       )}
     </div>
