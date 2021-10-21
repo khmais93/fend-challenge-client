@@ -16,7 +16,7 @@ Packages used: axios, react-bootstrap.
 Clone the repository, change directories, and use YARN to install the dependencies.
 
 ```bash
-$ gh repo clone khmais93/fend-challenge-client
+$ git clone https://github.com/khmais93/fend-challenge-client
 $ cd fend-challenge-client
 $ yarn install
 ```
