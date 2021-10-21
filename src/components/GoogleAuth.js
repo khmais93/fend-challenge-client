@@ -24,7 +24,7 @@ function GoogleAuth(props) {
   useEffect(() => {
     loginHandler(isSignedIn);
   }, [isSignedIn, loginHandler]);
-  console.log("GoogleAuth.JS", isSignedIn);
+  // console.log("GoogleAuth.JS", isSignedIn);
 
   const onAuthChange = () => {
     setIsSignedIn(auth.current.isSignedIn.get());
