@@ -18,10 +18,10 @@ function SearchBar(props) {
     const fetchData = async (field, searchValue) => {
       if (field === "chemicalName") {
         const results = await axios.get(
-          `http://localhost:8000/api/v1/patents?chemical_type_1[regex]=${searchValue.toUpperCase()}`
+          `https://fend-challenge.herokuapp.com/api/v1/patents?chemical_type_1[regex]=${searchValue.toUpperCase()}`
         );
         const exactMatch = await axios.get(
-          `http://localhost:8000/api/v1/patents?chemical_type_1=${searchValue.toUpperCase()}`
+          `https://fend-challenge.herokuapp.com/api/v1/patents?chemical_type_1=${searchValue.toUpperCase()}`
         );
         onSearch(results.data.data.patents, {
           patents: exactMatch.data.data.patents,
@@ -30,7 +30,7 @@ function SearchBar(props) {
       }
       if (field === "patentTitle") {
         const results = await axios.get(
-          `http://localhost:8000/api/v1/patents?patent_title[regex]=${searchValue.toUpperCase()}`
+          `https://fend-challenge.herokuapp.com/api/v1/patents?patent_title[regex]=${searchValue.toUpperCase()}`
         );
         onSearch(results.data.data.patents);
       }
