@@ -1,13 +1,13 @@
 # FrontEnd Challenge, client side
 
-This app render patents results based on instanteneous searched words. Words can be a part of a patent title or a chemical type used on the patent claim. User can choose between two by selecting the search type he wants to use.
+This app render patents results based on instantaneous searched words. Words can be a part of a patent title or a chemical type used on the patent claim. By selecting the search type he wishes to utilize, the user can pick between two options.
 
-For both search types, a table of results will be shown, it includes patents title and their number. Patent No if clicked will take the user to the Google patent website.
-If you search using chemical type mode, then a part will show up showing how many patents are using this chemical type.
+For both sorts of searches, a table of results will be displayed, which will include patents title and number. If the user clicks on Patent No, they will be taken to the Google patent page.
+If you search by chemical type, a section will appear that shows how many patents use that chemical type.
 
 To be able to use this search app, user must login first using his Google account.
 
-Results received in this app are the result of an the consumption of an API that was build mainly for this app using ExpressJs. This Backend app is deployed on [Heroku](https://fend-challenge.herokuapp.com/api/v1/patents).
+The results in this app are the result of using an API that was built specifically for this app using ExpressJs. This Backend app is deployed on [Heroku](https://fend-challenge.herokuapp.com/api/v1/patents).
 
 Packages used: axios, react-bootstrap.
 
