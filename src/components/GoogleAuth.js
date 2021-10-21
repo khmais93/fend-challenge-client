@@ -24,15 +24,17 @@ function GoogleAuth(props) {
   useEffect(() => {
     loginHandler(isSignedIn);
   }, [isSignedIn, loginHandler]);
+  console.log("GoogleAuth.JS", isSignedIn);
 
   const onAuthChange = () => {
     setIsSignedIn(auth.current.isSignedIn.get());
   };
-  const onSignIn = () => {
+
+  const onSignInClick = () => {
     auth.current.signIn();
   };
 
-  const onSignOut = () => {
+  const onSignOutClick = () => {
     auth.current.signOut();
   };
 
@@ -41,14 +43,14 @@ function GoogleAuth(props) {
       return null;
     } else if (isSignedIn) {
       return (
-        <button onClick={onSignOut} className="ui red google button">
+        <button onClick={onSignOutClick} className="ui red google button">
           <i className="google icon" />
           Sign Out
         </button>
       );
     } else {
       return (
-        <button onClick={onSignIn} className="ui red google button">
+        <button onClick={onSignInClick} className="ui red google button">
           <i className="google icon" />
           Sign In with Google
         </button>

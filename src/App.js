@@ -6,6 +6,7 @@ import Home from "./components/Home";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(null);
+  console.log("APP.JS", loggedIn);
   return (
     <>
       <NavBar loginHandler={setLoggedIn} />
