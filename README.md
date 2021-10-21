@@ -3,7 +3,7 @@
 This app render patents results based on instantaneous searched words. Words can be a part of a patent title or a chemical type used on the patent claim. By selecting the search type he wishes to utilize, the user can pick between two options.
 
 For both sorts of searches, a table of results will be displayed, which will include patents title and number. If the user clicks on Patent No, they will be taken to the Google patent page.
-If you search by chemical type, a section will appear that shows how many patents use that chemical type.
+If he searches by chemical type, a section will appear that shows how many patents use that chemical type.
 
 To be able to use this search app, user must login first using his Google account.
 
