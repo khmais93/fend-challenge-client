@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Row, Col, FloatingLabel, Form } from "react-bootstrap";
-import axios from "axios";
+import herokuapp from "../apis/herokuapp";
 
 function SearchBar(props) {
   const [searchField, setSearchField] = useState("patentTitle");
@@ -17,11 +17,11 @@ function SearchBar(props) {
   useEffect(() => {
     const fetchData = async (field, searchValue) => {
       if (field === "chemicalName") {
-        const results = await axios.get(
-          `https://fend-challenge.herokuapp.com/api/v1/patents?chemical_type_1[regex]=${searchValue.toUpperCase()}`
+        const results = await herokuapp.get(
+          `/patents?chemical_type_1[regex]=${searchValue.toUpperCase()}`
         );
-        const exactMatch = await axios.get(
-          `https://fend-challenge.herokuapp.com/api/v1/patents?chemical_type_1=${searchValue.toUpperCase()}`
+        const exactMatch = await herokuapp.get(
+          `/patents?chemical_type_1=${searchValue.toUpperCase()}`
         );
         onSearch(results.data.data.patents, {
           patents: exactMatch.data.data.patents,
@@ -29,13 +29,16 @@ function SearchBar(props) {
         });
       }
       if (field === "patentTitle") {
-        const results = await axios.get(
-          `https://fend-challenge.herokuapp.com/api/v1/patents?patent_title[regex]=${searchValue.toUpperCase()}`
-        );
+        const results =
+          searchValue.length === 0
+            ? await herokuapp.get(`/patents?patent_title[regex]=VITAMIN`)
+            : await herokuapp.get(
+                `/patents?patent_title[regex]=${searchValue.toUpperCase()}`
+              );
         onSearch(results.data.data.patents);
       }
     };
-    const timeout = setTimeout(async () => {
+    const timeout = setTimeout(() => {
       fetchData(searchField, searchValue);
     }, 1000);
     return () => {

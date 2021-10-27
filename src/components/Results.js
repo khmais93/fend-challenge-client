@@ -44,7 +44,11 @@ function Results(props) {
   if (results === null) {
     toRender = <div style={messageStyle}>Loading...</div>;
   } else if (results.length === 0) {
-    toRender = <div style={messageStyle}>No results were found.</div>;
+    toRender = (
+      <div style={messageStyle}>
+        No results were found. Please enter another value.
+      </div>
+    );
   } else {
     toRender = (
       <Row className={classes.row}>
